@@ -28,12 +28,12 @@ import com.plcoding.cryptotracker.ui.theme.greenBackground
 fun PriceChange(
     change: DisplayableNumber, modifier: Modifier = Modifier
 ) {
-    val contentColor = if (change.number < 0.0) {
+    val contentColor = if (change.value < 0.0) {
         MaterialTheme.colorScheme.onErrorContainer
     } else {
         Color.Green
     }
-    val backgroundColor = if (change.number < 0.0) {
+    val backgroundColor = if (change.value < 0.0) {
         MaterialTheme.colorScheme.errorContainer
     } else {
         greenBackground
@@ -47,7 +47,7 @@ fun PriceChange(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
-            imageVector = if (change.number < 0.0)
+            imageVector = if (change.value < 0.0)
                 Icons.Default.KeyboardArrowDown else Icons.Default.KeyboardArrowUp,
             contentDescription = null,
             modifier = Modifier
@@ -59,18 +59,6 @@ fun PriceChange(
             fontSize = 14.sp,
             color = contentColor,
             fontWeight = FontWeight.Medium
-        )
-    }
-}
-
-@PreviewLightDark
-@Composable
-private fun PreviewPriceChange() {
-    CryptoTrackerTheme {
-        PriceChange(
-            DisplayableNumber(
-                number = 4.3, formatted = "4.30"
-            )
         )
     }
 }

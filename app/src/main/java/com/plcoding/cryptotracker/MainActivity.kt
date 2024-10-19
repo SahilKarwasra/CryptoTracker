@@ -4,13 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import com.plcoding.cryptotracker.crypto.presentation.coinList.CoinListScreen
-import com.plcoding.cryptotracker.crypto.presentation.coinList.components.previewCoin
-import com.plcoding.cryptotracker.crypto.presentation.models.CoinListState
+import com.plcoding.cryptotracker.crypto.presentation.coinList.CoinListViewModel
 import com.plcoding.cryptotracker.ui.theme.CryptoTrackerTheme
+import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,14 +17,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CryptoTrackerTheme {
+                val viewModel = koinViewModel<CoinListViewModel>()
+                val state by viewModel.state.collectAsState()
                 CoinListScreen(
-                    state = CoinListState(
-                        coins = (1..100).map {
-                            previewCoin.copy(id = it.toString())
-                        }
-                    ),
-                    modifier = Modifier
-                        .background(MaterialTheme.colorScheme.background))
+                    state = state,
+                )
             }
         }
     }

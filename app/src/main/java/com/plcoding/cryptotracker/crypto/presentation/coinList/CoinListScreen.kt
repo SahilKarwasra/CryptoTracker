@@ -16,52 +16,37 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.plcoding.cryptotracker.crypto.presentation.coinList.components.CoinListItem
-import com.plcoding.cryptotracker.crypto.presentation.coinList.components.previewCoin
 import com.plcoding.cryptotracker.crypto.presentation.models.CoinListState
 import com.plcoding.cryptotracker.ui.theme.CryptoTrackerTheme
 
 @Composable
 fun CoinListScreen(
     state: CoinListState,
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier
 ) {
     if(state.isLoading) {
         Box(
-            modifier = modifier.fillMaxSize(),
+            modifier = modifier
+                .fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
             CircularProgressIndicator()
         }
     } else {
         LazyColumn(
-            modifier = modifier.fillMaxSize(),
+            modifier = modifier
+                .fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(state.coins) { coinUi ->
                 CoinListItem(
                     coinUi = coinUi,
-                    onClick = {},
+                    onClick = { /*TODO*/ },
                     modifier = Modifier.fillMaxWidth()
                 )
                 HorizontalDivider()
             }
         }
-    }
-}
-
-@PreviewLightDark
-@Composable
-private fun PreviewCoinListScreen() {
-    CryptoTrackerTheme {
-        CoinListScreen(
-            state = CoinListState(
-                coins = (1..100) . map {
-                    previewCoin.copy(id = it.toString())
-                }
-            ),
-            modifier = Modifier
-                .background(MaterialTheme.colorScheme.background)
-        )
     }
 }
 

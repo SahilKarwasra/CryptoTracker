@@ -26,8 +26,8 @@ import com.plcoding.cryptotracker.crypto.presentation.CoinUi
 @Composable
 fun CoinListItem(
     coinUi: CoinUi,
-    modifier: Modifier = Modifier,
     onClick: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     val contentColor = if (isSystemInDarkTheme()) {
         Color.White

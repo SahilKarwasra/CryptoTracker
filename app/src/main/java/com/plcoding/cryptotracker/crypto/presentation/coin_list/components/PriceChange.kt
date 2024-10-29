@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker.crypto.presentation.coinList.components
+package com.plcoding.cryptotracker.crypto.presentation.coin_list.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -17,11 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.plcoding.cryptotracker.crypto.presentation.DisplayableNumber
-import com.plcoding.cryptotracker.ui.theme.CryptoTrackerTheme
 import com.plcoding.cryptotracker.ui.theme.greenBackground
 
 @Composable

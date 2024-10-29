@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker.crypto.presentation.coinList
+package com.plcoding.cryptotracker.crypto.presentation.coin_list
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,13 +12,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.plcoding.cryptotracker.crypto.presentation.coinList.components.CoinListItem
+import com.plcoding.cryptotracker.crypto.presentation.coin_list.components.CoinListItem
 import com.plcoding.cryptotracker.crypto.presentation.models.CoinListState
 
 @Composable
 fun CoinListScreen(
     state: CoinListState,
-    modifier: Modifier = Modifier
+    onAction: (CoinListAction) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
 
 
@@ -39,7 +40,9 @@ fun CoinListScreen(
             items(state.coins) { coinUi ->
                 CoinListItem(
                     coinUi = coinUi,
-                    onClick = { /*TODO*/ },
+                    onClick = {
+                        onAction(CoinListAction.OnCoinClick(coinUi))
+                    },
                     modifier = Modifier.fillMaxWidth()
                 )
                 HorizontalDivider()

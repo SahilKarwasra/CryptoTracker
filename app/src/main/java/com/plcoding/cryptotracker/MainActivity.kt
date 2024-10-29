@@ -12,12 +12,14 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import com.plcoding.cryptotracker.core.navigation.AdaptiveCoinListDetailPane
 import com.plcoding.cryptotracker.core.presentation.util.ObserveAsEvents
-import com.plcoding.cryptotracker.crypto.presentation.coinList.CoinListEvent
-import com.plcoding.cryptotracker.crypto.presentation.coinList.CoinListScreen
-import com.plcoding.cryptotracker.crypto.presentation.coinList.CoinListViewModel
+import com.plcoding.cryptotracker.crypto.presentation.coin_detail.CoinDetailScreen
+import com.plcoding.cryptotracker.crypto.presentation.coin_list.CoinListEvent
+import com.plcoding.cryptotracker.crypto.presentation.coin_list.CoinListScreen
+import com.plcoding.cryptotracker.crypto.presentation.coin_list.CoinListViewModel
 import com.plcoding.cryptotracker.ui.theme.CryptoTrackerTheme
-import org. koin.androidx.compose.koinViewModel
+import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,23 +28,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             CryptoTrackerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    val viewModel = koinViewModel<CoinListViewModel>()
-                    val state by viewModel.state.collectAsState()
-                    val context = LocalContext.current
-                    ObserveAsEvents(events = viewModel.event) { event ->
-                        when (event) {
-                            is CoinListEvent.Error -> {
-                                Toast.makeText(
-                                    context,
-                                    event.error.toString(),
-                                    Toast.LENGTH_LONG
-                                ).show()
-                            }
-                        }
-                    }
-                    CoinListScreen(
-                        state = state,
-                        modifier = Modifier.padding(innerPadding)
+                    AdaptiveCoinListDetailPane(
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }

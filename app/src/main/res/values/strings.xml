@@ -6,4 +6,7 @@
     <string name="server_error">Server Side Error\n</string>
     <string name="serialization_error">Couldn\'t serialize or deserialize data</string>
     <string name="unknown_error">"Unexpected error "</string>
+    <string name="market_cap">Market Cap</string>
+    <string name="price">Price</string>
+    <string name="change_last_24_hours">Change Last 24H</string>
 </resources>

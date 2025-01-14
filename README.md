@@ -17,11 +17,11 @@ Crypto Tracker is a modern cryptocurrency tracking app built with **Jetpack Comp
 ### Tablet Light Mode
 <img src="https://github.com/user-attachments/assets/fe30791d-a4a3-4e2a-ad37-41a07fd61c2b" alt="Tablet Light Mode" width="600">
 
-### Phone Cryptocurrency List
-<img src="https://github.com/user-attachments/assets/4b4e4a5a-6e7e-4ec6-9446-91d2e4e96528" alt="Phone Cryptocurrency List" width="45%">
+<div style="display: flex; justify-content: space-around;">
+ <img src="https://github.com/user-attachments/assets/4b4e4a5a-6e7e-4ec6-9446-91d2e4e96528" alt="Phone Cryptocurrency List" width="35%">
+ <img src="https://github.com/user-attachments/assets/1c3766b5-8a52-4053-b92c-36d59ae10774" alt="Phone Cryptocurrency Details" width="35%">
+</div>
 
-### Phone Cryptocurrency Details
-<img src="https://github.com/user-attachments/assets/1c3766b5-8a52-4053-b92c-36d59ae10774" alt="Phone Cryptocurrency Details" width="45%">
 
 ### Tablet Dark Mode
 <img src="https://github.com/user-attachments/assets/17e0b5c1-32b7-4368-99fa-e933a7057bf1" alt="Tablet Dark Mode" width="600">
@@ -60,5 +60,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - **Email**: sahilkarwasra11@gmail.com
 - **GitHub**: [@SahilKarwasra](https://github.com/SahilKarwasra)
-- **Twitter**: [@SahilKarwasra](https://twitter.com/SahilKarwasra)
+- **Linkedin**: [@SahilKarwasra]((https://www.linkedin.com/in/sahilkarwasra/))
 

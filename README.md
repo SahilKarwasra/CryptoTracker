@@ -25,6 +25,8 @@ Crypto Tracker is a modern cryptocurrency tracking app built with **Jetpack Comp
 
 ### Tablet Dark Mode
 <img src="https://github.com/user-attachments/assets/17e0b5c1-32b7-4368-99fa-e933a7057bf1" alt="Tablet Dark Mode" width="600">
+
+
 ## Tech Stack
 
 - **Jetpack Compose**: For building modern Android UIs.
